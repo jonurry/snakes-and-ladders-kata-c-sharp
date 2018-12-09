@@ -2,11 +2,29 @@
 
 namespace SnakesLadders
 {
+  public interface IRandomDieRoller
+  {
+    int RollDie();
+  }
   public class Game
   {
+    private readonly IRandomDieRoller _dieRoller;
+    private class DefaultDieRoller : IRandomDieRoller
+    {
+      public int RollDie()
+      {
+        return (new Random()).Next(1, 7);
+      }
+    }
     private bool isWon;
     private int position;
-    public Game(int startPosition = 1)
+    public Game(IRandomDieRoller dieRoller, int startPosition = 1)
+    {
+      _dieRoller = dieRoller;
+      position = startPosition;
+      isWon = false;
+    }
+    public Game(int startPosition = 1) : this(new DefaultDieRoller())
     {
       position = startPosition;
       isWon = false;
@@ -26,7 +44,7 @@ namespace SnakesLadders
     }
     public void RollDie()
     {
-      Move(1);
+      Move(_dieRoller.RollDie());
     }
   }
 }
