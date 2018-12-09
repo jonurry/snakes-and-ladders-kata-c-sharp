@@ -12,19 +12,27 @@ namespace SnakesLadders.UnitTests.MovingYourToken
     {
       _game = new Game();
       _game.Position = 97;
-      _game.Move(3);
     }
 
     [Fact]
     public void TokenLandsOn100()
     {
+      _game.Move(3);
       Assert.True(_game.Position == 100, "Token did not land on 100");
     }
 
     [Fact]
     public void GameIsWonWhenTokenLandsOn100()
     {
+      _game.Move(3);
       Assert.True(_game.IsWon, "Game was not won");
+    }
+
+    [Fact]
+    public void TokenOvershoots100_RollIsForfeit()
+    {
+      _game.Move(4);
+      Assert.True(_game.Position == 97, "Roll was not forfeit");
     }
   }
 }

@@ -17,8 +17,8 @@ namespace SnakesLadders
     }
     public void Move(int spaces)
     {
-      position += spaces;
-      if (position == 100) { isWon = true; }
+      if (position + spaces <= 100) { position += spaces; }
+      isWon = (position == 100);
     }
     public int Position
     {
