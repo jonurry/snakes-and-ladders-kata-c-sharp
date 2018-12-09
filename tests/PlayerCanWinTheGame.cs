@@ -9,8 +9,7 @@ namespace SnakesLadders.UnitTests.MovingYourToken
 
     public Game_PlayerCanWinTheGame()
     {
-      _game = new Game();
-      _game.Position = 97;
+      _game = new Game(97);
     }
 
     [Fact]

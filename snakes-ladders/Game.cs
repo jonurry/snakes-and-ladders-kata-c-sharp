@@ -6,9 +6,9 @@ namespace SnakesLadders
   {
     private bool isWon;
     private int position;
-    public Game()
+    public Game(int startPosition = 1)
     {
-      position = 1;
+      position = startPosition;
       isWon = false;
     }
     public bool IsWon
@@ -23,7 +23,6 @@ namespace SnakesLadders
     public int Position
     {
       get => position;
-      set => position = value;
     }
   }
 }
