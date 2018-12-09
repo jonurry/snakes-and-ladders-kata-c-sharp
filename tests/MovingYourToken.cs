@@ -2,13 +2,13 @@ using System;
 using Xunit;
 using SnakesLadders;
 
-namespace SnakesLadders.UnitTests
+namespace SnakesLadders.UnitTests.MovingYourToken
 {
-  public class Game_MovingYourTokenShould
+  public class Game_TokenCanMoveAcrossTheBoard
   {
     private readonly Game _game;
 
-    public Game_MovingYourTokenShould()
+    public Game_TokenCanMoveAcrossTheBoard()
     {
       _game = new Game();
     }
