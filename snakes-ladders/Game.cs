@@ -9,6 +9,10 @@ namespace SnakesLadders
     {
       position = 1;
     }
+    public void Move(int spaces)
+    {
+      position += spaces;
+    }
     public int Position
     {
       get => position;
