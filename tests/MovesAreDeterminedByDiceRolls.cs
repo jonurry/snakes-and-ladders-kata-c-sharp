@@ -16,9 +16,9 @@ namespace SnakesLadders.UnitTests.MovingYourToken
     [Fact]
     public void ItShouldRollMinimumValueOf1()
     {
-      var dieRollerStub = new Mock<IRandomDieRoller>();
-      dieRollerStub.Setup(rdr => rdr.RollDie()).Returns(1);
-      _game = new Game(dieRollerStub.Object);
+      var randomDieRollerStub = new Mock<IRandomDieRoller>();
+      randomDieRollerStub.Setup(rdr => rdr.RollDie()).Returns(1);
+      _game = new Game(randomDieRollerStub.Object);
       _game.RollDie();
       Assert.True(_game.Position == 2, "User did not roll a 1");
     }
@@ -26,11 +26,21 @@ namespace SnakesLadders.UnitTests.MovingYourToken
     [Fact]
     public void ItShouldRollMaximumValueOf6()
     {
-      var dieRollerStub = new Mock<IRandomDieRoller>();
-      dieRollerStub.Setup(rdr => rdr.RollDie()).Returns(6);
-      _game = new Game(dieRollerStub.Object);
+      var randomDieRollerStub = new Mock<IRandomDieRoller>();
+      randomDieRollerStub.Setup(rdr => rdr.RollDie()).Returns(6);
+      _game = new Game(randomDieRollerStub.Object);
       _game.RollDie();
       Assert.True(_game.Position == 7, "User did not roll a 6");
+    }
+
+    [Fact]
+    public void ItShouldRoll4_AndMove4Spaces()
+    {
+      var randomDieRollerStub = new Mock<IRandomDieRoller>();
+      randomDieRollerStub.Setup(rdr => rdr.RollDie()).Returns(4);
+      _game = new Game(randomDieRollerStub.Object);
+      _game.RollDie();
+      Assert.True(_game.Position == 5, "User did not roll a 4");
     }
   }
 }
