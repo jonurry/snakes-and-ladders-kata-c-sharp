@@ -8,11 +8,6 @@ namespace SnakesLadders.UnitTests.MovingYourToken
   {
     private Game _game;
 
-    public Game_MovesAreDeterminedByDiceRolls()
-    {
-      //_game = new Game();
-    }
-
     [Fact]
     public void ItShouldRollMinimumValueOf1()
     {
