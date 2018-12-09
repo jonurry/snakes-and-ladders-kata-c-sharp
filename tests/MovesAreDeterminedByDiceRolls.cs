@@ -42,5 +42,14 @@ namespace SnakesLadders.UnitTests.MovingYourToken
       _game.RollDie();
       Assert.True(_game.Position == 5, "User did not roll a 4");
     }
+
+    [Fact]
+    public void ItShouldCall_RollDie_WhenRollingADie()
+    {
+      var randomDieRollerStub = new Mock<IRandomDieRoller>();
+      _game = new Game(randomDieRollerStub.Object);
+      _game.RollDie();
+      randomDieRollerStub.Verify(rdr => rdr.RollDie(), "RollDie() should have been called");
+    }
   }
 }
