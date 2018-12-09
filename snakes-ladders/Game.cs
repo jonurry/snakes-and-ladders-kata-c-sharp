@@ -24,5 +24,9 @@ namespace SnakesLadders
     {
       get => position;
     }
+    public void RollDie()
+    {
+      Move(1);
+    }
   }
 }
