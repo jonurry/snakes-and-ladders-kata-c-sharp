@@ -1,4 +1,3 @@
-using System;
 using Xunit;
 using SnakesLadders;
 
@@ -33,6 +32,13 @@ namespace SnakesLadders.UnitTests.MovingYourToken
     {
       _game.Move(4);
       Assert.True(_game.Position == 97, "Roll was not forfeit");
+    }
+
+    [Fact]
+    public void TokenOvershoots100_GameIsNotWon()
+    {
+      _game.Move(4);
+      Assert.False(_game.IsWon, "Game was not lost");
     }
   }
 }
