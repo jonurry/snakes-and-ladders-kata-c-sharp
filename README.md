@@ -1,6 +1,6 @@
 # snakes-and-ladders-kata-c-sharp
 
-Solution to the Snakes and Ladders Kata at http://agilekatas.co.uk/katas/SnakesAndLadders-Katain (in C#)
+Solution to the Snakes and Ladders Kata at [Agile Katas](http://agilekatas.co.uk/katas/SnakesAndLadders-Kata) (in C#)
 
 My first solution to this Kata can be found [here](https://github.com/jonurry/snakes-and-ladders-kata) (using `Node.js`). As an additional exercise, I also solved the Kata using C# which can be seen in this repository.
 
